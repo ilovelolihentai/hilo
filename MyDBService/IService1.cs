@@ -1,10 +1,10 @@
-﻿using MyDBService.Entity;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using MyDBService.Entity;
 
 namespace MyDBService
 {
@@ -18,21 +18,16 @@ namespace MyDBService
         [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);
 
-         //TODO: Add your service operations here
+        // TODO: Add your service operations here
         [OperationContract]
-        List<Site> GetAllEmployee();
+        List<Attractions> SelectAttractionsAll();
 
         [OperationContract]
-        Site GetEmployeeByNric(string nric);
+        Attractions SelectAttractions(string ID);
 
         [OperationContract]
-        Site DeleteEmployeeByNric(string nric);
-
-        [OperationContract]
-        Site UpdateEmployeeByNric(string nric);
-
-        [OperationContract]
-        int CreateEmployee(string nric, string name, string dob, string dept, double wage);
+        int CreateAttractions(string ID, string Name, string Desc,
+                       decimal unitPrice, string Image);
 
     }
 

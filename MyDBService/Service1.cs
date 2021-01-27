@@ -1,11 +1,10 @@
-﻿using MyDBService.Entity;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
-
+using MyDBService.Entity;
 namespace MyDBService
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in both code and config file together.
@@ -28,26 +27,22 @@ namespace MyDBService
             }
             return composite;
         }
-        public List<Site> GetAllEmployee()
+        public List<Attractions> SelectAttractionsAll()
         {
-            Site emp = new Site();
-            return emp.SelectAll();
+            Attractions emp = new Attractions();
+            return emp.GetAttractionsAll();
         }
-        public Site GetEmployeeByNric(string nric)
+        public Attractions SelectAttractions(string ID)
         {
-            Site emp = new Site();
-            return emp.SelectByNric(nric);
+            Attractions emp = new Attractions();
+            return emp.GetAttractions(ID);
         }
-        public Site DeleteEmployeeByNric(string nric)
+        public int CreateAttractions(string ID, string Name, string Desc,
+                       decimal unitPrice, string Image)
         {
-            Site emp = new Site();
-            return emp.DeleteByNric(nric);
-        }
-        public int CreateEmployee(string nric, string name, string dob, string dept, double wage)
-        {
-            Site emp = new Site(nric, name, dob, dept, wage);
+            Attractions emp = new Attractions(ID, Name, Desc, unitPrice, Image);
             return emp.Insert();
         }
-       
+
     }
 }
