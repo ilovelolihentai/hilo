@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/MyDBService.Entity" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/MyDBService.Entity" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfEmployee">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Employee" nillable="true" type="tns:Employee" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEmployee" nillable="true" type="tns:ArrayOfEmployee" />
+  <xs:complexType name="Employee">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Birthdate" type="xs:string" />
+      <xs:element minOccurs="0" name="Dept" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmployeeCPF" type="xs:double" />
+      <xs:element minOccurs="0" name="EmployerCPF" type="xs:double" />
+      <xs:element minOccurs="0" name="MthlySalary" type="xs:double" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nric" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Employee" nillable="true" type="tns:Employee" />
+  <xs:complexType name="Customer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HomePhone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Mobile" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nric" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Postal" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Customer" nillable="true" type="tns:Customer" />
+  <xs:complexType name="ArrayOfTDRate">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TDRate" nillable="true" type="tns:TDRate" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTDRate" nillable="true" type="tns:ArrayOfTDRate" />
+  <xs:complexType name="TDRate">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Rate" type="xs:double" />
+      <xs:element minOccurs="0" name="Term" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TDRate" nillable="true" type="tns:TDRate" />
+  <xs:complexType name="ArrayOfTDMaster">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TDMaster" nillable="true" type="tns:TDMaster" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTDMaster" nillable="true" type="tns:ArrayOfTDMaster" />
+  <xs:complexType name="TDMaster">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Account" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EffectiveFrom" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Interest" type="xs:double" />
+      <xs:element minOccurs="0" name="MaturedAmt" type="xs:double" />
+      <xs:element minOccurs="0" name="MaturityDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Principal" type="xs:double" />
+      <xs:element minOccurs="0" name="Rate" type="xs:double" />
+      <xs:element minOccurs="0" name="RenewMode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Term" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TDMaster" nillable="true" type="tns:TDMaster" />
+</xs:schema>

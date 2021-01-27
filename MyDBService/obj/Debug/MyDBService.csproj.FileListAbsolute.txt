@@ -1,0 +1,14 @@
+D:\plk\VSProject\Pract4\MyDBService\obj\Debug\MyDBService.csprojAssemblyReference.cache
+D:\plk\VSProject\Pract4\MyDBService\obj\Debug\MyDBService.csproj.CoreCompileInputs.cache
+D:\plk\VSProject\Pract4\MyDBService\bin\Debug\MyDBService.dll.config
+D:\plk\VSProject\Pract4\MyDBService\bin\Debug\MyDBService.dll
+D:\plk\VSProject\Pract4\MyDBService\bin\Debug\MyDBService.pdb
+D:\plk\VSProject\Pract4\MyDBService\obj\Debug\MyDBService.dll
+D:\plk\VSProject\Pract4\MyDBService\obj\Debug\MyDBService.pdb
+C:\Users\Jay\Desktop\sch\Pract4\MyDBService\bin\Debug\MyDBService.dll.config
+C:\Users\Jay\Desktop\sch\Pract4\MyDBService\bin\Debug\MyDBService.dll
+C:\Users\Jay\Desktop\sch\Pract4\MyDBService\bin\Debug\MyDBService.pdb
+C:\Users\Jay\Desktop\sch\Pract4\MyDBService\obj\Debug\MyDBService.csprojAssemblyReference.cache
+C:\Users\Jay\Desktop\sch\Pract4\MyDBService\obj\Debug\MyDBService.csproj.CoreCompileInputs.cache
+C:\Users\Jay\Desktop\sch\Pract4\MyDBService\obj\Debug\MyDBService.dll
+C:\Users\Jay\Desktop\sch\Pract4\MyDBService\obj\Debug\MyDBService.pdb
