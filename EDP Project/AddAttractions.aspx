@@ -28,7 +28,7 @@
         <tr>
             <td class="auto-style1" style="width: 134px">Description</td>
             <td>
-                <asp:TextBox ID="tbDescription" runat="server"></asp:TextBox>
+                <asp:TextBox ID="tbDescription" TextMode ="MultiLine" runat="server"></asp:TextBox>
             </td>
         </tr>
         <tr>
@@ -47,6 +47,15 @@
             <td class="auto-style1" style="width: 134px">&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
+         <tr>
+            <td class="auto-style1" style="width: 134px">
+                <asp:Label ID="Label1" runat="server" CssClass ="col-md-2 control-label" Text="Category"></asp:Label>
+            </td>
+             <td>
+                  <asp:DropDownList ID="DropDownList1" CssClass ="form-control" AutoPostBack ="true"  runat="server" OnSelectedIndexChanged="ddlCategory_SelectedIndexChanged"></asp:DropDownList>
+             </td>
+        </tr>
+                                                                          
         <tr>
             <td class="auto-style4">
                 <asp:Label ID="lbl_Result" runat="server" Text="Label"></asp:Label>

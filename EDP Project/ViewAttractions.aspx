@@ -1,6 +1,14 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ViewAttractions.aspx.cs" Inherits="EDP_Project.ViewAttractions" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-     <asp:GridView ID="gvAttractions" runat="server" AutoGenerateColumns="False" CellPadding="0" CssClass="myDatagrid" OnSelectedIndexChanged="gvProduct_SelectedIndexChanged">
+     <asp:GridView 
+         ID="gvAttractions" 
+         runat="server" 
+         AutoGenerateColumns="False" 
+         OnSelectedIndexChanged="gvProduct_SelectedIndexChanged"
+         Gridlines="None"
+         cssClass="ViewAttractions"
+         AlternatingRowStyle-CssClass="alt">
             <Columns>
                 <asp:BoundField DataField="_ID" HeaderText="ID" ReadOnly="True" />
                 <asp:BoundField DataField="_Name" HeaderText="Name" ReadOnly="True" />

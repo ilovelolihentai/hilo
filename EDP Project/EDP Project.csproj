@@ -126,14 +126,17 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="AddAttractions.aspx" />
+    <Content Include="AddCategory.aspx" />
+    <Content Include="Content\StyleSheet1.css" />
+    <Content Include="Images\download.jfif" />
     <Content Include="payment.aspx" />
     <Content Include="payment1.aspx" />
     <Content Include="ViewAttractions.aspx" />
     <None Include="Connected Services\ServiceReference1\configuration91.svcinfo" />
     <None Include="Connected Services\ServiceReference1\configuration.svcinfo" />
-    <Content Include="App_Data\MyDB.mdf" />
-    <Content Include="App_Data\MyDB_log.ldf">
-      <DependentUpon>MyDB.mdf</DependentUpon>
+    <Content Include="App_Data\HotelHaven.mdf" />
+    <Content Include="App_Data\HotelHaven_log.ldf">
+      <DependentUpon>HotelHaven.mdf</DependentUpon>
     </Content>
     <Content Include="Connected Services\ServiceReference1\EDP_Project.ServiceReference1.CompositeType.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -210,9 +213,17 @@
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
     <Content Include="Site.Mobile.Master" />
+    <Content Include="Home.aspx" />
     <Content Include="webhooks.ashx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddCategory.aspx.cs">
+      <DependentUpon>AddCategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddCategory.aspx.designer.cs">
+      <DependentUpon>AddCategory.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
@@ -294,13 +305,18 @@
     <Compile Include="ViewAttractions.aspx.designer.cs">
       <DependentUpon>ViewAttractions.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
     <Compile Include="webhooks.ashx.cs">
       <DependentUpon>webhooks.ashx</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Images\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />

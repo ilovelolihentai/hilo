@@ -2,6 +2,10 @@
 body {
     padding-top: 50px;
     padding-bottom: 20px;
+    margin: 0;
+    background: white;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 800;
 }
 
 /* Wrapping element */
@@ -9,8 +13,112 @@ body {
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    
+}
+.ViewAttractions {
+    width:100%;
+    border-collapse: collapse;
+    border: 1px solid #black;
+    color:white
 }
 
+    .ViewAttractions th {
+        background-color: #ffffff;
+        font-style: bold;
+        font-size: medium ;
+        color:white
+    }
+    .ViewAttractions td {
+        padding: 10px;
+        border: solid 1px #c1c1c1;
+        font-variant: small-caps;
+        color: #222 ;
+        background: white;
+    }
+    .ViewAttractions td a {
+            border: solid 1px #c1c1c1;
+            color: red
+        }
+    .ViewAttractions td a:hover{
+
+        border: solid 1px #c1c1c1;
+        color: red
+    }
+    .ViewAttractions .alt{
+        background: gray
+            repeat-x top;
+    }
+.ViewAttractionsButton {
+    border: thin solid #B6E427;
+    font-family: 'Arial Unicode MS';
+    background-color: #C1F984;
+    color: #FFFFFF;
+    font-style: normal;
+    text-align: center;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+header {
+    background: #55d6aa;
+}
+
+header::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.navbar-brand {
+    float: left;
+    padding: 10px 0;
+}
+
+nav {
+    float: right;
+}
+
+    nav ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    nav li {
+        display: inline-block;
+        margin-left: 70px;
+        padding-top: 23px;
+        position: relative;
+    }
+
+    nav a {
+        color: #444;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 14px;
+    }
+
+    nav a:hover {
+        color: #000;
+    }
+
+    nav a::before {
+        content: '';
+        display: block;
+        height: 5px;
+        background-color: #444;
+        position: absolute;
+        top: 0;
+        width: 0%;
+        transition: all ease-in-out 250ms;
+    }
+
+    nav a:hover::before {
+        width: 90%;
+    }
+
+
+
+</style >
 /* Set widths on the form inputs since otherwise they're 100% wide */
 input,
 select,

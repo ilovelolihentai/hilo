@@ -1,0 +1,9 @@
+﻿#gvAttractions {
+    border-collapse: collapse;
+    border: 1px solid #ff006e;
+}
+
+#gvAttractions th {
+    background-color: #ff006e;
+    color: #dddddd
+}
