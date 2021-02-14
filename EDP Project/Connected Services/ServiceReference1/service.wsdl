@@ -38,6 +38,30 @@
   <wsdl:message name="IService1_CreateAttractions_OutputMessage">
     <wsdl:part name="parameters" element="tns:CreateAttractionsResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_CreateCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateCategory" />
+  </wsdl:message>
+  <wsdl:message name="IService1_CreateCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SelectCategoryAll_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectCategoryAll" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SelectCategoryAll_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectCategoryAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SelectCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectCategory" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SelectCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SelectAttractionsView_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectAttractionsView" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SelectAttractionsView_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectAttractionsViewResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="GetData">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetData" message="tns:IService1_GetData_InputMessage" />
@@ -58,6 +82,22 @@
     <wsdl:operation name="CreateAttractions">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/CreateAttractions" message="tns:IService1_CreateAttractions_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/CreateAttractionsResponse" message="tns:IService1_CreateAttractions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/CreateCategory" message="tns:IService1_CreateCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/CreateCategoryResponse" message="tns:IService1_CreateCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectCategoryAll">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SelectCategoryAll" message="tns:IService1_SelectCategoryAll_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SelectCategoryAllResponse" message="tns:IService1_SelectCategoryAll_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SelectCategory" message="tns:IService1_SelectCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SelectCategoryResponse" message="tns:IService1_SelectCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectAttractionsView">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SelectAttractionsView" message="tns:IService1_SelectAttractionsView_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SelectAttractionsViewResponse" message="tns:IService1_SelectAttractionsView_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -100,6 +140,42 @@
     </wsdl:operation>
     <wsdl:operation name="CreateAttractions">
       <soap:operation soapAction="http://tempuri.org/IService1/CreateAttractions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateCategory">
+      <soap:operation soapAction="http://tempuri.org/IService1/CreateCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectCategoryAll">
+      <soap:operation soapAction="http://tempuri.org/IService1/SelectCategoryAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectCategory">
+      <soap:operation soapAction="http://tempuri.org/IService1/SelectCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectAttractionsView">
+      <soap:operation soapAction="http://tempuri.org/IService1/SelectAttractionsView" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

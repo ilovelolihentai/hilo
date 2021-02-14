@@ -17,6 +17,8 @@ namespace MyDBService.Entity
         public decimal _unitPrice { get; set; }
         public string _Image { get; set; }
 
+        public string _AttCategory { get; set; }
+
 
         // Default constructor
         public Attractions()
@@ -26,13 +28,14 @@ namespace MyDBService.Entity
 
         // Constructor that take in all data required to build a Product object
         public Attractions(string ID, string Name, string Desc,
-                       decimal unitPrice, string Image)
+                       decimal unitPrice, string Image, string AttCategory )
         {
             _ID = ID;
             _Name = Name;
             _Desc = Desc;
             _unitPrice = unitPrice;
             _Image = Image;
+            _AttCategory = AttCategory;
         }
 
         // Constructor that take in all except product ID
@@ -81,8 +84,8 @@ namespace MyDBService.Entity
 
             string DBConnect = ConfigurationManager.ConnectionStrings["MyDB"].ConnectionString;
             SqlConnection myConn = new SqlConnection(DBConnect);
-            string sqlStmt = "INSERT INTO Attractions(Id,name,description,price,image) "
-                + " values (@para_ID,@para_Name, @para_Desc, @para_unitPrice, @para_Image)";
+            string sqlStmt = "INSERT INTO Attractions(Id,name,description,price,image,AtCategoryId) "
+                + " values (@para_ID,@para_Name, @para_Desc, @para_unitPrice, @para_Image, @para_AttCategory)";
 
             SqlCommand sqlCmd = new SqlCommand(sqlStmt, myConn);
             sqlCmd.Parameters.AddWithValue("@para_ID", _ID);
@@ -90,6 +93,7 @@ namespace MyDBService.Entity
             sqlCmd.Parameters.AddWithValue("@para_Desc", _Desc);
             sqlCmd.Parameters.AddWithValue("@para_unitPrice", _unitPrice);
             sqlCmd.Parameters.AddWithValue("@para_Image", _Image);
+            sqlCmd.Parameters.AddWithValue("@para_AttCategory", _AttCategory);
 
             myConn.Open();
             int result = sqlCmd.ExecuteNonQuery();
@@ -125,11 +129,12 @@ namespace MyDBService.Entity
             {
                 DataRow row = ds.Tables[0].Rows[0];  // Sql command returns only one record
                 string name = row["name"].ToString();
-                string desc = row["desc"].ToString();
+                string desc = row["description"].ToString();
                 string price = row["price"].ToString();
                 decimal pay = Convert.ToDecimal(price);
                 string image = row["image"].ToString();
-                emp = new Attractions(ID, name, desc, pay, image);
+                string prodcat = row["AtCategoryId"].ToString();
+                emp = new Attractions(ID, name, desc, pay, image, prodcat);
             }
             return emp;
         }
@@ -165,11 +170,46 @@ namespace MyDBService.Entity
                 string price = row["price"].ToString();
                 decimal pay = Convert.ToDecimal(price);
                 string image = row["image"].ToString();
-                Attractions obj = new Attractions(ID, name, desc, pay, image);
+                string prodcat = row["AtCategoryId"].ToString();
+                Attractions obj = new Attractions(ID, name, desc, pay, image, prodcat);
                 empList.Add(obj);
 
             }
             return empList;
+        }
+        public Attractions GetAttractionsView(string ID)
+        {
+            //Step 1 -  Define a connection to the database by getting
+            //          the connection string from App.config
+            string DBConnect = ConfigurationManager.ConnectionStrings["MyDB"].ConnectionString;
+            SqlConnection myConn = new SqlConnection(DBConnect);
+
+            //Step 2 -  Create a DataAdapter to retrieve data from the database table
+            string sqlStmt = "SELECT * FROM Attractions INNER JOIN Category ON Attractions.AtCategoryId = Category.Id where Attractions.Id = @para_ID ";
+            SqlDataAdapter da = new SqlDataAdapter(sqlStmt, myConn);
+            da.SelectCommand.Parameters.AddWithValue("@para_ID", ID);
+
+            //Step 3 -  Create a DataSet to store the data to be retrieved
+            DataSet ds = new DataSet();
+
+            //Step 4 -  Use the DataAdapter to fill the DataSet with data retrieved
+            da.Fill(ds);
+
+            //Step 5 -  Read data from DataSet.
+            Attractions emp = null;
+            int rec_cnt = ds.Tables[0].Rows.Count;
+            if (rec_cnt == 1)
+            {
+                DataRow row = ds.Tables[0].Rows[0];  // Sql command returns only one record
+                string name = row["name"].ToString();
+                string desc = row["description"].ToString();
+                string price = row["price"].ToString();
+                decimal pay = Convert.ToDecimal(price);
+                string image = row["image"].ToString();
+                string prodcat = row["CatName"].ToString();
+                emp = new Attractions(ID, name, desc, pay, image, prodcat);
+            }
+            return emp;
         }
     }
 }

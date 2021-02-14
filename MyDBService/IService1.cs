@@ -27,7 +27,20 @@ namespace MyDBService
 
         [OperationContract]
         int CreateAttractions(string ID, string Name, string Desc,
-                       decimal unitPrice, string Image);
+                       decimal unitPrice, string Image,string ProdCat);
+
+
+        [OperationContract]
+        int CreateCategory(string ID, string Name);
+
+        [OperationContract]
+        List<Category> SelectCategoryAll();
+
+        [OperationContract]
+        Category SelectCategory(string ID);
+
+        [OperationContract]
+        Attractions SelectAttractionsView(string ID);
 
     }
 

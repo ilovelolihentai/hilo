@@ -8,6 +8,7 @@
   <xs:element name="ArrayOfAttractions" nillable="true" type="tns:ArrayOfAttractions" />
   <xs:complexType name="Attractions">
     <xs:sequence>
+      <xs:element minOccurs="0" name="_AttCategory" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="_Desc" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="_ID" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="_Image" nillable="true" type="xs:string" />
@@ -16,4 +17,17 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Attractions" nillable="true" type="tns:Attractions" />
+  <xs:complexType name="ArrayOfCategory">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Category" nillable="true" type="tns:Category" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCategory" nillable="true" type="tns:ArrayOfCategory" />
+  <xs:complexType name="Category">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CatID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CatName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Category" nillable="true" type="tns:Category" />
 </xs:schema>

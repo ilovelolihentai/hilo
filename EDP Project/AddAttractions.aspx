@@ -52,7 +52,7 @@
                 <asp:Label ID="Label1" runat="server" CssClass ="col-md-2 control-label" Text="Category"></asp:Label>
             </td>
              <td>
-                  <asp:DropDownList ID="DropDownList1" CssClass ="form-control" AutoPostBack ="true"  runat="server" OnSelectedIndexChanged="ddlCategory_SelectedIndexChanged"></asp:DropDownList>
+                  <asp:DropDownList ID="ddlCategory" CssClass ="form-control" AutoPostBack ="true"  runat="server" OnSelectedIndexChanged="ddlCategory_SelectedIndexChanged"></asp:DropDownList>
              </td>
         </tr>
                                                                           

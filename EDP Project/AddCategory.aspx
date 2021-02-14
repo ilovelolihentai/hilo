@@ -38,43 +38,25 @@
                <div class="panel-heading"> All Categories</div>
 
 
-     <asp:repeater ID="rptrCategory" runat="server">
-
-         <HeaderTemplate>
-             <table class="table">
-                  <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Categories</th>
-                        <th>Edit</th>
-
-                    </tr>
-
-                </thead>
+          <asp:GridView 
+         ID="gvCategory" 
+         runat="server" 
+         AutoGenerateColumns="False" 
+         Gridlines="None"
+         AlternatingRowStyle-CssClass="alt">
+            <Columns>
+                <asp:BoundField DataField="CatID" HeaderText="CatID" ReadOnly="True" />
+                <asp:BoundField DataField="CatName" HeaderText="CatName" ReadOnly="True" />
 
 
+                <asp:CommandField ShowSelectButton="True" />
 
-            <tbody>
-         </HeaderTemplate>
-
-
-         <ItemTemplate>
-             <tr>
-                    <th> <%# Eval("ID") %> </th>
-                    <td><%# Eval("CatName") %>   </td>
-
-                    <td>Edit</td>
-                </tr>
-         </ItemTemplate>
+                
 
 
-         <FooterTemplate>
-             </tbody>
 
-              </table>
-         </FooterTemplate>
-
-     </asp:repeater>
+            </Columns>
+        </asp:GridView>
 
               
                 

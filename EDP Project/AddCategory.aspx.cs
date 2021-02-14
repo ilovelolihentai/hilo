@@ -7,6 +7,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using EDP_Project.ServiceReference1;
 
 namespace EDP_Project
 {
@@ -14,25 +15,29 @@ namespace EDP_Project
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            BindCategoryReapter();
+            BindCategoryReapter1();
         }
-        private void BindCategoryReapter()
+        
+        private void BindCategoryReapter1()
         {
-            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MyDB"].ConnectionString))
+            List<Category> cList = new List<Category>();
+
+            ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
+            cList = client.SelectCategoryAll()?.ToList<Category>();
+            if (cList != null)
             {
-                using (SqlCommand cmd = new SqlCommand("select * from Category", con))
-                {
-                    using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
-                    {
-                        DataTable dt = new DataTable();
-                        sda.Fill(dt);
-                        rptrCategory.DataSource = dt;
-                        rptrCategory.DataBind();
-                    }
-                }
+
+                gvCategory.Visible = true;
+                gvCategory.DataSource = cList;
+                gvCategory.DataBind();
+            }
+            else
+            {
+                gvCategory.Visible = false;
             }
         }
-        protected void btnAddtxtCategory_Click(object sender, EventArgs e)
+
+protected void btnAddtxtCategory_Click(object sender, EventArgs e)
         {
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["MyDB"].ConnectionString))
             {

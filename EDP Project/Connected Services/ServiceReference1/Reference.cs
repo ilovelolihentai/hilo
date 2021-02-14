@@ -84,6 +84,9 @@ namespace EDP_Project.ServiceReference1 {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string _AttCategoryField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string _DescField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -105,6 +108,19 @@ namespace EDP_Project.ServiceReference1 {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string _AttCategory {
+            get {
+                return this._AttCategoryField;
+            }
+            set {
+                if ((object.ReferenceEquals(this._AttCategoryField, value) != true)) {
+                    this._AttCategoryField = value;
+                    this.RaisePropertyChanged("_AttCategory");
+                }
             }
         }
         
@@ -183,6 +199,67 @@ namespace EDP_Project.ServiceReference1 {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Category", Namespace="http://schemas.datacontract.org/2004/07/MyDBService.Entity")]
+    [System.SerializableAttribute()]
+    public partial class Category : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CatIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CatNameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CatID {
+            get {
+                return this.CatIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CatIDField, value) != true)) {
+                    this.CatIDField = value;
+                    this.RaisePropertyChanged("CatID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CatName {
+            get {
+                return this.CatNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CatNameField, value) != true)) {
+                    this.CatNameField = value;
+                    this.RaisePropertyChanged("CatName");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IService1")]
     public interface IService1 {
@@ -212,10 +289,34 @@ namespace EDP_Project.ServiceReference1 {
         System.Threading.Tasks.Task<EDP_Project.ServiceReference1.Attractions> SelectAttractionsAsync(string ID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CreateAttractions", ReplyAction="http://tempuri.org/IService1/CreateAttractionsResponse")]
-        int CreateAttractions(string ID, string Name, string Desc, decimal unitPrice, string Image);
+        int CreateAttractions(string ID, string Name, string Desc, decimal unitPrice, string Image, string ProdCat);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CreateAttractions", ReplyAction="http://tempuri.org/IService1/CreateAttractionsResponse")]
-        System.Threading.Tasks.Task<int> CreateAttractionsAsync(string ID, string Name, string Desc, decimal unitPrice, string Image);
+        System.Threading.Tasks.Task<int> CreateAttractionsAsync(string ID, string Name, string Desc, decimal unitPrice, string Image, string ProdCat);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CreateCategory", ReplyAction="http://tempuri.org/IService1/CreateCategoryResponse")]
+        int CreateCategory(string ID, string Name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CreateCategory", ReplyAction="http://tempuri.org/IService1/CreateCategoryResponse")]
+        System.Threading.Tasks.Task<int> CreateCategoryAsync(string ID, string Name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SelectCategoryAll", ReplyAction="http://tempuri.org/IService1/SelectCategoryAllResponse")]
+        EDP_Project.ServiceReference1.Category[] SelectCategoryAll();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SelectCategoryAll", ReplyAction="http://tempuri.org/IService1/SelectCategoryAllResponse")]
+        System.Threading.Tasks.Task<EDP_Project.ServiceReference1.Category[]> SelectCategoryAllAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SelectCategory", ReplyAction="http://tempuri.org/IService1/SelectCategoryResponse")]
+        EDP_Project.ServiceReference1.Category SelectCategory(string ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SelectCategory", ReplyAction="http://tempuri.org/IService1/SelectCategoryResponse")]
+        System.Threading.Tasks.Task<EDP_Project.ServiceReference1.Category> SelectCategoryAsync(string ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SelectAttractionsView", ReplyAction="http://tempuri.org/IService1/SelectAttractionsViewResponse")]
+        EDP_Project.ServiceReference1.Attractions SelectAttractionsView(string ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SelectAttractionsView", ReplyAction="http://tempuri.org/IService1/SelectAttractionsViewResponse")]
+        System.Threading.Tasks.Task<EDP_Project.ServiceReference1.Attractions> SelectAttractionsViewAsync(string ID);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -277,12 +378,44 @@ namespace EDP_Project.ServiceReference1 {
             return base.Channel.SelectAttractionsAsync(ID);
         }
         
-        public int CreateAttractions(string ID, string Name, string Desc, decimal unitPrice, string Image) {
-            return base.Channel.CreateAttractions(ID, Name, Desc, unitPrice, Image);
+        public int CreateAttractions(string ID, string Name, string Desc, decimal unitPrice, string Image, string ProdCat) {
+            return base.Channel.CreateAttractions(ID, Name, Desc, unitPrice, Image, ProdCat);
         }
         
-        public System.Threading.Tasks.Task<int> CreateAttractionsAsync(string ID, string Name, string Desc, decimal unitPrice, string Image) {
-            return base.Channel.CreateAttractionsAsync(ID, Name, Desc, unitPrice, Image);
+        public System.Threading.Tasks.Task<int> CreateAttractionsAsync(string ID, string Name, string Desc, decimal unitPrice, string Image, string ProdCat) {
+            return base.Channel.CreateAttractionsAsync(ID, Name, Desc, unitPrice, Image, ProdCat);
+        }
+        
+        public int CreateCategory(string ID, string Name) {
+            return base.Channel.CreateCategory(ID, Name);
+        }
+        
+        public System.Threading.Tasks.Task<int> CreateCategoryAsync(string ID, string Name) {
+            return base.Channel.CreateCategoryAsync(ID, Name);
+        }
+        
+        public EDP_Project.ServiceReference1.Category[] SelectCategoryAll() {
+            return base.Channel.SelectCategoryAll();
+        }
+        
+        public System.Threading.Tasks.Task<EDP_Project.ServiceReference1.Category[]> SelectCategoryAllAsync() {
+            return base.Channel.SelectCategoryAllAsync();
+        }
+        
+        public EDP_Project.ServiceReference1.Category SelectCategory(string ID) {
+            return base.Channel.SelectCategory(ID);
+        }
+        
+        public System.Threading.Tasks.Task<EDP_Project.ServiceReference1.Category> SelectCategoryAsync(string ID) {
+            return base.Channel.SelectCategoryAsync(ID);
+        }
+        
+        public EDP_Project.ServiceReference1.Attractions SelectAttractionsView(string ID) {
+            return base.Channel.SelectAttractionsView(ID);
+        }
+        
+        public System.Threading.Tasks.Task<EDP_Project.ServiceReference1.Attractions> SelectAttractionsViewAsync(string ID) {
+            return base.Channel.SelectAttractionsViewAsync(ID);
         }
     }
 }

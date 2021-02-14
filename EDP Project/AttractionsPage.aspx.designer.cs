@@ -11,52 +11,61 @@ namespace EDP_Project
 {
 
 
-    public partial class AddCategory
+    public partial class AttractionsPage
     {
 
         /// <summary>
-        /// Label1 control.
+        /// Prod_Image1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.Image Prod_Image1;
 
         /// <summary>
-        /// txtCategory control.
+        /// Prod_Image2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCategory;
+        protected global::System.Web.UI.WebControls.Image Prod_Image2;
 
         /// <summary>
-        /// RequiredFieldValidatortxtCategoryName control.
+        /// Product_Name control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatortxtCategoryName;
+        protected global::System.Web.UI.WebControls.Label Product_Name;
 
         /// <summary>
-        /// btnAddtxtCategory control.
+        /// Product_Price control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAddtxtCategory;
+        protected global::System.Web.UI.WebControls.Label Product_Price;
 
         /// <summary>
-        /// gvCategory control.
+        /// Product_Desc control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvCategory;
+        protected global::System.Web.UI.WebControls.Label Product_Desc;
+
+        /// <summary>
+        /// Prod_Category control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Prod_Category;
     }
 }

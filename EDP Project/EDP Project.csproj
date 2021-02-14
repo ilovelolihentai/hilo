@@ -127,8 +127,11 @@
     <Content Include="About.aspx" />
     <Content Include="AddAttractions.aspx" />
     <Content Include="AddCategory.aspx" />
+    <Content Include="AttractionsPage.aspx" />
     <Content Include="Content\StyleSheet1.css" />
     <Content Include="Images\download.jfif" />
+    <Content Include="Images\wallpaperflare.com_wallpaper.jpg" />
+    <Content Include="Images\wallpaperflare.com_wallpaper1.jpg" />
     <Content Include="payment.aspx" />
     <Content Include="payment1.aspx" />
     <Content Include="ViewAttractions.aspx" />
@@ -142,6 +145,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\ServiceReference1\EDP_Project.ServiceReference1.Attractions.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\EDP_Project.ServiceReference1.Category.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Connected Services\ServiceReference1\MyDBService.Entity.xsd">
@@ -209,6 +215,7 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
+    <Content Include="ViewAttractions1.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -233,6 +240,13 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="AttractionsPage.aspx.cs">
+      <DependentUpon>AttractionsPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AttractionsPage.aspx.designer.cs">
+      <DependentUpon>AttractionsPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\ServiceReference1\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -283,6 +297,13 @@
     </Compile>
     <Compile Include="Site.Mobile.Master.designer.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ViewAttractions1.aspx.cs">
+      <DependentUpon>ViewAttractions1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewAttractions1.aspx.designer.cs">
+      <DependentUpon>ViewAttractions1.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>

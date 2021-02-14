@@ -55,7 +55,13 @@
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/">Home</a></li>
                         <li><a runat="server" href="~/About">About</a></li>
-                        <li><a runat="server" href="~/ViewAttractions">Attractions</a></li>
+                        <li><a runat="server" href="~/ViewAttractions1">Attractions</a></li>
+                        <li>
+                            <button id="btnCart" class="btn btn-primary navbar-btn" type="button">
+                                Cart<span class="badge" id="pCount" runat="server"></span>
+
+                            </button>
+                        </li>
                     </ul>
                 
                 </div>
