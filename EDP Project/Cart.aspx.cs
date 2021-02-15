@@ -35,6 +35,7 @@ namespace EDP_Project
                     for (int i = 0; i<CookieDataArray.Length;i ++)
                     {
                         string PID = CookieDataArray[i].ToString().Split('-')[0];
+                        string calenderdate = CookieDataArray[i].ToString().Split('-')[1];
                         string DBConnect = ConfigurationManager.ConnectionStrings["MyDB"].ConnectionString;
 
 
@@ -47,6 +48,13 @@ namespace EDP_Project
                                 {
 
                                     sda.Fill(dt);
+                                    dt.Columns.Add("Date", typeof(String));
+                                    foreach (DataRow row in dt.Rows)
+                                    {
+                                        //need to set value to NewColumn column
+                                        row["Date"] = calenderdate;   // or set it to some other value
+                                    }
+                                    
 
                                 }
                             }

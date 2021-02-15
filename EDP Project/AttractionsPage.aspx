@@ -71,7 +71,8 @@
               </td>
               <td>
                 <div class="mt-1">
-                    <asp:Calendar ID="Calendar1" runat="server"></asp:Calendar>
+                    <p>Booking date</p>
+                    <asp:Calendar ID="Calendar1" runat="server" SelectionMode="DayWeekMonth"></asp:Calendar>
                   <div class="form-check form-check-inline pl-0">
                     <input type="radio" class="form-check-input" id="small" name="materialExampleRadios"
                       checked>

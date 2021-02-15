@@ -16,6 +16,9 @@
                     <h4 class="media-heading"><%# Eval ("name") %></h4>
             
                     <span class="PriceView"> <%# Eval ("price","{0:c}") %></span>
+                    <h4>Date Booked:<span class="Date"> <%# Eval ("Date") %></span>
+                    </h4>
+                    
                   
                     <p>
                         <asp:Button ID="btnRemoveCart" UseSubmitBehavior="false" CssClass="RemoveButton" runat="server" Text="REMOVE" OnClick="btnRemoveCart_Click" CommandArgument='<%# Eval("ID") %>'/>

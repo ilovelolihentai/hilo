@@ -59,10 +59,11 @@ namespace EDP_Project
         protected void btnAddtoCart_Click(object sender, EventArgs e)
         {
             Int64 PID = Convert.ToInt64(Request.QueryString["Id"]);
+            var calendardate = Calendar1.SelectedDate.ToShortDateString();
             if (Request.Cookies["CartPID"] != null)
             {
                 string CookiePID = Request.Cookies["CartPID"].Value.Split('=')[1];
-                CookiePID = CookiePID + "," + PID ;
+                CookiePID = CookiePID + "," + PID + "-" + calendardate;
                 HttpCookie CartProducts = new HttpCookie("CartPID");
                 CartProducts.Values["CartPID"] = CookiePID;
                 CartProducts.Expires = DateTime.Now.AddDays(30);
@@ -71,7 +72,7 @@ namespace EDP_Project
             else
             {
                 HttpCookie CartProducts = new HttpCookie("CartPID");
-                CartProducts.Values["CartPID"] = PID.ToString();
+                CartProducts.Values["CartPID"] = PID.ToString() + "-" + calendardate;
                 CartProducts.Expires = DateTime.Now.AddDays(30);
                 Response.Cookies.Add(CartProducts);
             }
