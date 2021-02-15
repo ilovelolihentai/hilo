@@ -27,6 +27,7 @@ namespace EDP_Project
 
         private void BindProductDetails()
         {
+            Int64 PID = Convert.ToInt64(Request.QueryString["Id"]);
             ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
 
             Attractions cusObj = client.SelectAttractionsView(Request.QueryString["Id"]);
@@ -43,8 +44,7 @@ namespace EDP_Project
                 {
                     Prod_Image1.ImageUrl = Imagevar;
                     Prod_Image1.Visible = true;
-                    Prod_Image2.ImageUrl = Imagevar;
-                    Prod_Image2.Visible = true;
+    
                 }
                 else
                 {
@@ -55,6 +55,27 @@ namespace EDP_Project
             {
 
             }
+        }
+        protected void btnAddtoCart_Click(object sender, EventArgs e)
+        {
+            Int64 PID = Convert.ToInt64(Request.QueryString["Id"]);
+            if (Request.Cookies["CartPID"] != null)
+            {
+                string CookiePID = Request.Cookies["CartPID"].Value.Split('=')[1];
+                CookiePID = CookiePID + "," + PID ;
+                HttpCookie CartProducts = new HttpCookie("CartPID");
+                CartProducts.Values["CartPID"] = CookiePID;
+                CartProducts.Expires = DateTime.Now.AddDays(30);
+                Response.Cookies.Add(CartProducts);
+            }
+            else
+            {
+                HttpCookie CartProducts = new HttpCookie("CartPID");
+                CartProducts.Values["CartPID"] = PID.ToString();
+                CartProducts.Expires = DateTime.Now.AddDays(30);
+                Response.Cookies.Add(CartProducts);
+            }
+            Response.Redirect("AttractionsPage.aspx?Id =" + PID);
         }
     }
 }

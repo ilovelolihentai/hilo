@@ -11,7 +11,21 @@ namespace EDP_Project
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            BindCartNumber();
+        }
+        public void BindCartNumber()
+        {
+            if (Request.Cookies["CartPID"] != null)
+            {
+                string CookiePID = Request.Cookies["CartPID"].Value.Split('=')[1];
+                string[] ProductArray = CookiePID.Split(',');
+                int ProductCount = ProductArray.Length;
+                pCount.InnerText = ProductCount.ToString();
+            }
+            else
+            {
+                pCount.InnerText = 0.ToString();
+            }
         }
     }
 }

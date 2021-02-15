@@ -317,6 +317,18 @@ namespace EDP_Project.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SelectAttractionsView", ReplyAction="http://tempuri.org/IService1/SelectAttractionsViewResponse")]
         System.Threading.Tasks.Task<EDP_Project.ServiceReference1.Attractions> SelectAttractionsViewAsync(string ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SelectAttractionsList", ReplyAction="http://tempuri.org/IService1/SelectAttractionsListResponse")]
+        System.Data.DataTable SelectAttractionsList();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SelectAttractionsList", ReplyAction="http://tempuri.org/IService1/SelectAttractionsListResponse")]
+        System.Threading.Tasks.Task<System.Data.DataTable> SelectAttractionsListAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SelectCartList", ReplyAction="http://tempuri.org/IService1/SelectCartListResponse")]
+        System.Data.DataSet SelectCartList(string ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SelectCartList", ReplyAction="http://tempuri.org/IService1/SelectCartListResponse")]
+        System.Threading.Tasks.Task<System.Data.DataSet> SelectCartListAsync(string ID);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -416,6 +428,22 @@ namespace EDP_Project.ServiceReference1 {
         
         public System.Threading.Tasks.Task<EDP_Project.ServiceReference1.Attractions> SelectAttractionsViewAsync(string ID) {
             return base.Channel.SelectAttractionsViewAsync(ID);
+        }
+        
+        public System.Data.DataTable SelectAttractionsList() {
+            return base.Channel.SelectAttractionsList();
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataTable> SelectAttractionsListAsync() {
+            return base.Channel.SelectAttractionsListAsync();
+        }
+        
+        public System.Data.DataSet SelectCartList(string ID) {
+            return base.Channel.SelectCartList(ID);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> SelectCartListAsync(string ID) {
+            return base.Channel.SelectCartListAsync(ID);
         }
     }
 }

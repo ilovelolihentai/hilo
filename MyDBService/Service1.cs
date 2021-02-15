@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
@@ -66,6 +69,47 @@ namespace MyDBService
         {
             Attractions emp = new Attractions();
             return emp.GetAttractionsView(ID);
+        }
+        public DataTable SelectAttractionsList()
+        {
+            SqlDataAdapter da = new SqlDataAdapter();
+            string DBConnect = ConfigurationManager.ConnectionStrings["MyDB"].ConnectionString;
+            SqlConnection myConn = new SqlConnection(DBConnect);
+            da = new SqlDataAdapter("select * from Attractions", myConn);
+            DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
+            da.Fill(ds);
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                dt = ds.Tables[0];
+            }
+            return dt;
+        }
+        public DataSet SelectCartList(string ID)
+        {
+            SqlDataAdapter da = new SqlDataAdapter();
+            string DBConnect = ConfigurationManager.ConnectionStrings["MyDB"].ConnectionString;
+            SqlConnection myConn = new SqlConnection(DBConnect);
+
+            da = new SqlDataAdapter("select * from Attractions where Id = @para_ID", myConn);
+            da.SelectCommand.Parameters.AddWithValue("@para_ID", ID);
+               
+            DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
+            da.Fill(ds);
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                dt = ds.Tables[0];
+            }
+                
+
+
+
+
+
+            
+            return ds;
+
         }
     }
 }

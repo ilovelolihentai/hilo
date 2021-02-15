@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
@@ -41,6 +42,10 @@ namespace MyDBService
 
         [OperationContract]
         Attractions SelectAttractionsView(string ID);
+        [OperationContract]
+        DataTable SelectAttractionsList();
+        [OperationContract]
+        DataSet SelectCartList(string ID);
 
     }
 

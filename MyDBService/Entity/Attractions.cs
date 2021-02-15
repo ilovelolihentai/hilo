@@ -177,6 +177,7 @@ namespace MyDBService.Entity
             }
             return empList;
         }
+
         public Attractions GetAttractionsView(string ID)
         {
             //Step 1 -  Define a connection to the database by getting

@@ -9,6 +9,7 @@ using System.Threading;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using EDP_Project.ServiceReference1;
 
 namespace EDP_Project
 {
@@ -19,7 +20,7 @@ namespace EDP_Project
         {
             if (!IsPostBack)
             {
-                BindProductRepeater();
+                BindProductRepeater1();
 
             }
 
@@ -41,6 +42,19 @@ namespace EDP_Project
                         rptrProducts.DataBind();
                     }
                 }
+            }
+        }
+        private void BindProductRepeater1()
+        {
+            DataTable dt = new DataTable();
+            ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
+
+
+            dt = client.SelectAttractionsList();
+            if (dt.Rows.Count > 0)
+            {
+                rptrProducts.DataSource = dt;
+                rptrProducts.DataBind();
             }
         }
 

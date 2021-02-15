@@ -24,15 +24,6 @@ namespace EDP_Project
         protected global::System.Web.UI.WebControls.Image Prod_Image1;
 
         /// <summary>
-        /// Prod_Image2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Prod_Image2;
-
-        /// <summary>
         /// Product_Name control.
         /// </summary>
         /// <remarks>
@@ -67,5 +58,14 @@ namespace EDP_Project
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Prod_Category;
+
+        /// <summary>
+        /// btnAddtoCart control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAddtoCart;
     }
 }

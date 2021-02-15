@@ -37,6 +37,13 @@
                 <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>
+        <script>
+        $(document).ready(function myfunction() {
+            $("#btnCart").click(function myfunction() {
+                window.location.href = "/Cart.aspx";
+            });
+        });
+        </script>
         
 
         <header>
