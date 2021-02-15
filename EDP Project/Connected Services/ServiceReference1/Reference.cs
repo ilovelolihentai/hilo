@@ -15,6 +15,131 @@ namespace EDP_Project.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="User", Namespace="http://schemas.datacontract.org/2004/07/MyDBService.Entity")]
+    [System.SerializableAttribute()]
+    public partial class User : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AccountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DeleteField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EmailField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PasswordHashField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PasswordSaltField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UsernameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Account {
+            get {
+                return this.AccountField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AccountField, value) != true)) {
+                    this.AccountField = value;
+                    this.RaisePropertyChanged("Account");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Delete {
+            get {
+                return this.DeleteField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DeleteField, value) != true)) {
+                    this.DeleteField = value;
+                    this.RaisePropertyChanged("Delete");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Email {
+            get {
+                return this.EmailField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
+                    this.EmailField = value;
+                    this.RaisePropertyChanged("Email");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PasswordHash {
+            get {
+                return this.PasswordHashField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PasswordHashField, value) != true)) {
+                    this.PasswordHashField = value;
+                    this.RaisePropertyChanged("PasswordHash");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PasswordSalt {
+            get {
+                return this.PasswordSaltField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PasswordSaltField, value) != true)) {
+                    this.PasswordSaltField = value;
+                    this.RaisePropertyChanged("PasswordSalt");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Username {
+            get {
+                return this.UsernameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UsernameField, value) != true)) {
+                    this.UsernameField = value;
+                    this.RaisePropertyChanged("Username");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="CompositeType", Namespace="http://schemas.datacontract.org/2004/07/MyDBService")]
     [System.SerializableAttribute()]
     public partial class CompositeType : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -270,6 +395,36 @@ namespace EDP_Project.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetData", ReplyAction="http://tempuri.org/IService1/GetDataResponse")]
         System.Threading.Tasks.Task<string> GetDataAsync(int value);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllUser", ReplyAction="http://tempuri.org/IService1/GetAllUserResponse")]
+        EDP_Project.ServiceReference1.User[] GetAllUser();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllUser", ReplyAction="http://tempuri.org/IService1/GetAllUserResponse")]
+        System.Threading.Tasks.Task<EDP_Project.ServiceReference1.User[]> GetAllUserAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteUserById", ReplyAction="http://tempuri.org/IService1/DeleteUserByIdResponse")]
+        EDP_Project.ServiceReference1.User DeleteUserById(string email);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteUserById", ReplyAction="http://tempuri.org/IService1/DeleteUserByIdResponse")]
+        System.Threading.Tasks.Task<EDP_Project.ServiceReference1.User> DeleteUserByIdAsync(string email);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UnDeleteUserById", ReplyAction="http://tempuri.org/IService1/UnDeleteUserByIdResponse")]
+        EDP_Project.ServiceReference1.User UnDeleteUserById(string email);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UnDeleteUserById", ReplyAction="http://tempuri.org/IService1/UnDeleteUserByIdResponse")]
+        System.Threading.Tasks.Task<EDP_Project.ServiceReference1.User> UnDeleteUserByIdAsync(string email);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetUserById", ReplyAction="http://tempuri.org/IService1/GetUserByIdResponse")]
+        EDP_Project.ServiceReference1.User GetUserById(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetUserById", ReplyAction="http://tempuri.org/IService1/GetUserByIdResponse")]
+        System.Threading.Tasks.Task<EDP_Project.ServiceReference1.User> GetUserByIdAsync(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateUserById", ReplyAction="http://tempuri.org/IService1/UpdateUserByIdResponse")]
+        EDP_Project.ServiceReference1.User UpdateUserById(string email, string username);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateUserById", ReplyAction="http://tempuri.org/IService1/UpdateUserByIdResponse")]
+        System.Threading.Tasks.Task<EDP_Project.ServiceReference1.User> UpdateUserByIdAsync(string email, string username);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IService1/GetDataUsingDataContractResponse")]
         EDP_Project.ServiceReference1.CompositeType GetDataUsingDataContract(EDP_Project.ServiceReference1.CompositeType composite);
         
@@ -329,6 +484,12 @@ namespace EDP_Project.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SelectCartList", ReplyAction="http://tempuri.org/IService1/SelectCartListResponse")]
         System.Threading.Tasks.Task<System.Data.DataSet> SelectCartListAsync(string ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SearchAttractions", ReplyAction="http://tempuri.org/IService1/SearchAttractionsResponse")]
+        System.Data.DataTable SearchAttractions(string search);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SearchAttractions", ReplyAction="http://tempuri.org/IService1/SearchAttractionsResponse")]
+        System.Threading.Tasks.Task<System.Data.DataTable> SearchAttractionsAsync(string search);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -364,6 +525,46 @@ namespace EDP_Project.ServiceReference1 {
         
         public System.Threading.Tasks.Task<string> GetDataAsync(int value) {
             return base.Channel.GetDataAsync(value);
+        }
+        
+        public EDP_Project.ServiceReference1.User[] GetAllUser() {
+            return base.Channel.GetAllUser();
+        }
+        
+        public System.Threading.Tasks.Task<EDP_Project.ServiceReference1.User[]> GetAllUserAsync() {
+            return base.Channel.GetAllUserAsync();
+        }
+        
+        public EDP_Project.ServiceReference1.User DeleteUserById(string email) {
+            return base.Channel.DeleteUserById(email);
+        }
+        
+        public System.Threading.Tasks.Task<EDP_Project.ServiceReference1.User> DeleteUserByIdAsync(string email) {
+            return base.Channel.DeleteUserByIdAsync(email);
+        }
+        
+        public EDP_Project.ServiceReference1.User UnDeleteUserById(string email) {
+            return base.Channel.UnDeleteUserById(email);
+        }
+        
+        public System.Threading.Tasks.Task<EDP_Project.ServiceReference1.User> UnDeleteUserByIdAsync(string email) {
+            return base.Channel.UnDeleteUserByIdAsync(email);
+        }
+        
+        public EDP_Project.ServiceReference1.User GetUserById(string id) {
+            return base.Channel.GetUserById(id);
+        }
+        
+        public System.Threading.Tasks.Task<EDP_Project.ServiceReference1.User> GetUserByIdAsync(string id) {
+            return base.Channel.GetUserByIdAsync(id);
+        }
+        
+        public EDP_Project.ServiceReference1.User UpdateUserById(string email, string username) {
+            return base.Channel.UpdateUserById(email, username);
+        }
+        
+        public System.Threading.Tasks.Task<EDP_Project.ServiceReference1.User> UpdateUserByIdAsync(string email, string username) {
+            return base.Channel.UpdateUserByIdAsync(email, username);
         }
         
         public EDP_Project.ServiceReference1.CompositeType GetDataUsingDataContract(EDP_Project.ServiceReference1.CompositeType composite) {
@@ -444,6 +645,14 @@ namespace EDP_Project.ServiceReference1 {
         
         public System.Threading.Tasks.Task<System.Data.DataSet> SelectCartListAsync(string ID) {
             return base.Channel.SelectCartListAsync(ID);
+        }
+        
+        public System.Data.DataTable SearchAttractions(string search) {
+            return base.Channel.SearchAttractions(search);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataTable> SearchAttractionsAsync(string search) {
+            return base.Channel.SearchAttractionsAsync(search);
         }
     }
 }

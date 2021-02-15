@@ -48,13 +48,7 @@ namespace EDP_Project
                                 {
 
                                     sda.Fill(dt);
-                                    dt.Columns.Add("Date", typeof(String));
-                                    foreach (DataRow row in dt.Rows)
-                                    {
-                                        //need to set value to NewColumn column
-                                        row["Date"] = calenderdate;   // or set it to some other value
-                                    }
-                                    
+
 
                                 }
                             }
@@ -72,7 +66,7 @@ namespace EDP_Project
         }
 
 
-                    
+
 
 
         protected void btnRemoveCart_Click(object sender, EventArgs e)
@@ -83,7 +77,7 @@ namespace EDP_Project
             List<String> CookiePIDList = CookieData.Split(',').Select(i => i.Trim()).Where(i => i != string.Empty).ToList();
             CookiePIDList.Remove(PIDSIZE);
             string CookiePIDUpdated = String.Join(",", CookiePIDList.ToArray());
-            if (CookiePIDUpdated =="")
+            if (CookiePIDUpdated == "")
             {
                 HttpCookie CartProducts = Request.Cookies["CartPID"];
                 CartProducts.Values["CartPID"] = null;

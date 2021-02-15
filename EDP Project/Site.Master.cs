@@ -27,5 +27,10 @@ namespace EDP_Project
                 pCount.InnerText = 0.ToString();
             }
         }
+        protected void btnSearch_Click(object sender, EventArgs e)
+        {
+            var searchText = Server.UrlEncode(txtSearchMaster.Text); // URL encode in case of special characters
+            Response.Redirect("~/Results.aspx?search=" + searchText);
+        }
     }
 }

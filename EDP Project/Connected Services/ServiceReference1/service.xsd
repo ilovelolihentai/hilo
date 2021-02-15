@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import namespace="http://schemas.datacontract.org/2004/07/MyDBService" />
   <xs:import namespace="http://schemas.datacontract.org/2004/07/MyDBService.Entity" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/MyDBService" />
   <xs:element name="GetData">
     <xs:complexType>
       <xs:sequence>
@@ -16,17 +16,86 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetAllUser">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/MyDBService.Entity" minOccurs="0" name="GetAllUserResult" nillable="true" type="q1:ArrayOfUser" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteUserById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteUserByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/MyDBService.Entity" minOccurs="0" name="DeleteUserByIdResult" nillable="true" type="q2:User" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UnDeleteUserById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UnDeleteUserByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/MyDBService.Entity" minOccurs="0" name="UnDeleteUserByIdResult" nillable="true" type="q3:User" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/MyDBService.Entity" minOccurs="0" name="GetUserByIdResult" nillable="true" type="q4:User" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateUserById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateUserByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/MyDBService.Entity" minOccurs="0" name="UpdateUserByIdResult" nillable="true" type="q5:User" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="GetDataUsingDataContract">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/MyDBService" minOccurs="0" name="composite" nillable="true" type="q1:CompositeType" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/MyDBService" minOccurs="0" name="composite" nillable="true" type="q6:CompositeType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetDataUsingDataContractResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/MyDBService" minOccurs="0" name="GetDataUsingDataContractResult" nillable="true" type="q2:CompositeType" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/MyDBService" minOccurs="0" name="GetDataUsingDataContractResult" nillable="true" type="q7:CompositeType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -38,7 +107,7 @@
   <xs:element name="SelectAttractionsAllResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/MyDBService.Entity" minOccurs="0" name="SelectAttractionsAllResult" nillable="true" type="q3:ArrayOfAttractions" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/MyDBService.Entity" minOccurs="0" name="SelectAttractionsAllResult" nillable="true" type="q8:ArrayOfAttractions" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -52,7 +121,7 @@
   <xs:element name="SelectAttractionsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/MyDBService.Entity" minOccurs="0" name="SelectAttractionsResult" nillable="true" type="q4:Attractions" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/MyDBService.Entity" minOccurs="0" name="SelectAttractionsResult" nillable="true" type="q9:Attractions" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -98,7 +167,7 @@
   <xs:element name="SelectCategoryAllResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/MyDBService.Entity" minOccurs="0" name="SelectCategoryAllResult" nillable="true" type="q5:ArrayOfCategory" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/MyDBService.Entity" minOccurs="0" name="SelectCategoryAllResult" nillable="true" type="q10:ArrayOfCategory" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -112,7 +181,7 @@
   <xs:element name="SelectCategoryResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/MyDBService.Entity" minOccurs="0" name="SelectCategoryResult" nillable="true" type="q6:Category" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/MyDBService.Entity" minOccurs="0" name="SelectCategoryResult" nillable="true" type="q11:Category" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -126,7 +195,7 @@
   <xs:element name="SelectAttractionsViewResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/MyDBService.Entity" minOccurs="0" name="SelectAttractionsViewResult" nillable="true" type="q7:Attractions" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/MyDBService.Entity" minOccurs="0" name="SelectAttractionsViewResult" nillable="true" type="q12:Attractions" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -174,6 +243,32 @@
             <xs:sequence>
               <xs:element ref="xs:schema" />
               <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchAttractions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="search" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchAttractionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SearchAttractionsResult" nillable="true">
+          <xs:complexType>
+            <xs:annotation>
+              <xs:appinfo>
+                <ActualType Name="DataTable" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+            <xs:sequence>
+              <xs:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+              <xs:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

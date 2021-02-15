@@ -18,7 +18,32 @@ namespace MyDBService
         {
             return string.Format("You entered: {0}", value);
         }
+        public List<User> GetAllUser()
+        {
+            User emp = new User();
+            return emp.SelectAll();
+        }
 
+        public User GetUserById(string id)
+        {
+            User obj = new User();
+            return obj.SelectById(id);
+        }
+        public User DeleteUserById(string email)
+        {
+            User obj = new User();
+            return obj.DeleteById(email);
+        }
+        public User UpdateUserById(string email, string username)
+        {
+            User obj = new User();
+            return obj.UpdateById(email, username);
+        }
+        public User UnDeleteUserById(string email)
+        {
+            User obj = new User();
+            return obj.UnDeleteById(email);
+        }
         public CompositeType GetDataUsingDataContract(CompositeType composite)
         {
             if (composite == null)
@@ -43,7 +68,7 @@ namespace MyDBService
             return emp.GetAttractions(ID);
         }
         public int CreateAttractions(string ID, string Name, string Desc,
-                       decimal unitPrice, string Image,string ProdCat)
+                       decimal unitPrice, string Image, string ProdCat)
         {
             Attractions emp = new Attractions(ID, Name, Desc, unitPrice, Image, ProdCat);
             return emp.Insert();
@@ -85,6 +110,7 @@ namespace MyDBService
             }
             return dt;
         }
+
         public DataSet SelectCartList(string ID)
         {
             SqlDataAdapter da = new SqlDataAdapter();
@@ -93,7 +119,7 @@ namespace MyDBService
 
             da = new SqlDataAdapter("select * from Attractions where Id = @para_ID", myConn);
             da.SelectCommand.Parameters.AddWithValue("@para_ID", ID);
-               
+
             DataSet ds = new DataSet();
             DataTable dt = new DataTable();
             da.Fill(ds);
@@ -101,15 +127,28 @@ namespace MyDBService
             {
                 dt = ds.Tables[0];
             }
-                
 
 
-
-
-
-            
             return ds;
 
+        }
+        public DataTable SearchAttractions(string search)
+        {
+            SqlDataAdapter da = new SqlDataAdapter();
+            string DBConnect = ConfigurationManager.ConnectionStrings["MyDB"].ConnectionString;
+            SqlConnection myConn = new SqlConnection(DBConnect);
+            da = new SqlDataAdapter("SELECT * FROM Attractions WHERE name LIKE @para_ID ", myConn);
+            string wildcardsearch = "%" + search + "%";
+            da.SelectCommand.Parameters.AddWithValue("@para_ID", wildcardsearch);
+
+            DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
+            da.Fill(ds);
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                dt = ds.Tables[0];
+            }
+            return dt;
         }
     }
 }

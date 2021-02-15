@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Cart.aspx.cs" Inherits="EDP_Project.Cart" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <div style="padding-top:50px;">
-        <h4 class="MainCart">My Cart</h4>
+ <div style="padding-top:50px;">
+        <h4 class="MainCart" runat="server" id="MainCart">My Cart</h4>
         <asp:Repeater ID="prtrCartProd" runat="server">
             <ItemTemplate>
 
@@ -21,7 +21,7 @@
                     
                   
                     <p>
-                        <asp:Button ID="btnRemoveCart" UseSubmitBehavior="false" CssClass="RemoveButton" runat="server" Text="REMOVE" OnClick="btnRemoveCart_Click" CommandArgument='<%# Eval("ID") %>'/>
+                        <asp:Button ID="btnRemoveCart" UseSubmitBehavior="false" CssClass="RemoveButton" runat="server" Text="REMOVE" OnClick="btnRemoveCart_Click" CommandArgument='<%#Eval("Id")+"-"+ Eval("Date")%>'/>
                     </p>
                 </div>
 
@@ -37,18 +37,9 @@
             </h5>
             <div>
             <label>Cart Total</label>
-            <span class="pull-right priceGray" runat="server" id="spanCartTotal">1400</span>
+            <span class="pull-right priceGray" runat="server" id="spanCartTotal"></span>
             </div>
-            <div>
-                <label>Cart Discount</label>
-                <span Class="pull-right priceGreen">200</span>
-            </div>
-            <div>
-                <div class="TotalPriceView">
-                <label>Cart Total</label>
-                <span class="pull-right">1400</span>
-                </div>
-                <div>
+
                     <asp:Button ID="btnBuy" CssClass="buyNowbtn" runat="server" Text="Buy" Height="25px" OnClick="btnBuy_Click" />
                 </div>
 

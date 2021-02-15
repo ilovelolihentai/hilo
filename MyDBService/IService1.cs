@@ -15,6 +15,17 @@ namespace MyDBService
     {
         [OperationContract]
         string GetData(int value);
+        [OperationContract]
+        List<User> GetAllUser();
+        [OperationContract]
+        User DeleteUserById(string email);
+        [OperationContract]
+        User UnDeleteUserById(string email);
+
+        [OperationContract]
+        User GetUserById(string id);
+        [OperationContract]
+        User UpdateUserById(string email, string username);
 
         [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);
@@ -28,7 +39,7 @@ namespace MyDBService
 
         [OperationContract]
         int CreateAttractions(string ID, string Name, string Desc,
-                       decimal unitPrice, string Image,string ProdCat);
+                       decimal unitPrice, string Image, string ProdCat);
 
 
         [OperationContract]
@@ -46,6 +57,8 @@ namespace MyDBService
         DataTable SelectAttractionsList();
         [OperationContract]
         DataSet SelectCartList(string ID);
+        [OperationContract]
+        DataTable SearchAttractions(string search);
 
     }
 

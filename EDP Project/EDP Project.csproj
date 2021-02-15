@@ -127,14 +127,19 @@
     <Content Include="About.aspx" />
     <Content Include="AddAttractions.aspx" />
     <Content Include="AddCategory.aspx" />
+    <Content Include="Admin.aspx" />
     <Content Include="AttractionsPage.aspx" />
     <Content Include="Cart.aspx" />
     <Content Include="Content\StyleSheet1.css" />
+    <Content Include="css\style.css" />
+    <Content Include="css\StyleSheet1.css" />
     <Content Include="Images\download.jfif" />
     <Content Include="Images\wallpaperflare.com_wallpaper.jpg" />
     <Content Include="Images\wallpaperflare.com_wallpaper1.jpg" />
+    <Content Include="Login.aspx" />
     <Content Include="payment.aspx" />
     <Content Include="payment1.aspx" />
+    <Content Include="Profile.aspx" />
     <Content Include="ViewAttractions.aspx" />
     <None Include="Connected Services\ServiceReference1\configuration91.svcinfo" />
     <None Include="Connected Services\ServiceReference1\configuration.svcinfo" />
@@ -149,6 +154,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\ServiceReference1\EDP_Project.ServiceReference1.Category.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\EDP_Project.ServiceReference1.User.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Connected Services\ServiceReference1\MyDBService.Entity.xsd">
@@ -240,6 +248,13 @@
     <Compile Include="AddCategory.aspx.designer.cs">
       <DependentUpon>AddCategory.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin.aspx.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin.aspx.designer.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
@@ -285,6 +300,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
     <Compile Include="payment.aspx.cs">
       <DependentUpon>payment.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -298,6 +320,13 @@
     </Compile>
     <Compile Include="payment1.aspx.designer.cs">
       <DependentUpon>payment1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Profile.aspx.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profile.aspx.designer.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
